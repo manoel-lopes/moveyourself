@@ -1,9 +1,7 @@
 import { useContext } from 'react'
 
-import { ChallengeContext } from '../../contexts/ChallengeContext'
-
 import arrowLevel from '../../assets/icons/arrow-level.svg'
-
+import { ChallengeContext } from '../../contexts/ChallengeContext'
 import { Container } from './styles'
 
 export const Profile: React.FC = () => {

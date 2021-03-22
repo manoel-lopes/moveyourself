@@ -2,7 +2,7 @@ import { createContext, useState, ReactNode } from 'react'
 
 import challenges from '../../data/challenges.json'
 
-export type Challenge = {
+type Challenge = {
   type: 'body' | 'eye'
   description: string
   amount: number

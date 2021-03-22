@@ -4,7 +4,7 @@ import { CountdownContext } from '../../../contexts/CountdownContext'
 
 import { Container } from './styles'
 
-export const CountdownClock: React.FC = () => {
+export const Clock: React.FC = () => {
   const { minutes, seconds } = useContext(CountdownContext)
 
   const covertTimeToString = (time: number) => String(time).padStart(2, '0')

@@ -2,20 +2,20 @@ import { useContext } from 'react'
 
 import { CountdownContext } from '../../contexts/CountdownContext'
 
-import { CountdownClock } from './CountdownClock'
+import { Clock } from './Clock'
 
 import {
   FinishedCycleButton,
   QuitCycleButton,
   StarCycleButton
-} from './CountdownButtons'
+} from './Buttons'
 
 export const Countdown: React.FC = () => {
   const { hasFinished, isActive } = useContext(CountdownContext)
 
   return (
     <div>
-      <CountdownClock />
+      <Clock />
 
       {hasFinished ? (
         <FinishedCycleButton />
