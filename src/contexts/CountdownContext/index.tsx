@@ -26,7 +26,7 @@ export const CountdownProvider: React.FC<{ children: ReactNode }> = ({
   const { startNewChallenge } = useContext(ChallengeContext)
 
   const initialTime = 0.1 * 60
-  let countDownTimeout: NodeJS.Timeout
+  let timeout: NodeJS.Timeout
 
   const [time, setTime] = useState(initialTime)
   const [isActive, setIsActive] = useState(false)
@@ -41,14 +41,14 @@ export const CountdownProvider: React.FC<{ children: ReactNode }> = ({
   }
 
   const resetCountdown = () => {
-    clearTimeout(countDownTimeout)
+    clearTimeout(timeout)
     setIsActive(false)
     setTime(initialTime)
   }
 
   useEffect(() => {
     if (isActive && time > 0) {
-      countDownTimeout = setTimeout(() => {
+      timeout = setTimeout(() => {
         setTime(time - 1)
       }, 1000)
     } else if (isActive && time === 0) {
