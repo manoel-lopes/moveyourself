@@ -2,8 +2,6 @@ import { createContext, useState, ReactNode, useEffect } from 'react'
 
 import challenges from '../../data/challenges.json'
 
-import favcon from '../../assets/favcon.png'
-
 type Challenge = {
   type: 'body' | 'eye'
   description: string
