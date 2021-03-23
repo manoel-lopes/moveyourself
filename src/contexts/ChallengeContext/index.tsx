@@ -45,7 +45,7 @@ export const ChallengeProvider: React.FC<{ children: ReactNode }> = ({
 
     setActiveChallenge(challenge)
 
-    new Audio(notifications).play()
+    // new Audio(notifications).play()
 
     if (Notification.permission === 'granted') {
       new Notification('Novo desafio 🎉', {
