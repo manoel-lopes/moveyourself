@@ -1,6 +1,8 @@
-import { createContext, useState, ReactNode } from 'react'
+import { createContext, useState, ReactNode, useEffect } from 'react'
 
 import challenges from '../../data/challenges.json'
+
+import favcon from '../../assets/favcon.png'
 
 type Challenge = {
   type: 'body' | 'eye'
@@ -31,6 +33,10 @@ export const ChallengeProvider: React.FC<{ children: ReactNode }> = ({
 
   const [activeChallenge, setActiveChallenge] = useState<Challenge>(null)
 
+  useEffect(() => {
+    Notification.requestPermission()
+  }, [])
+
   const levelUp = () => setLevel(level + 1)
 
   const startNewChallenge = () => {
@@ -38,6 +44,14 @@ export const ChallengeProvider: React.FC<{ children: ReactNode }> = ({
     const challenge = challenges[randomChallengeIndex] as Challenge
 
     setActiveChallenge(challenge)
+
+    // new Audio(notification).play()
+
+    if (Notification.permission === 'granted') {
+      new Notification('Novo desafio 🎉', {
+        body: `Vlalend ${challenge.amount}xp!`
+      })
+    }
   }
 
   const resetChallenge = () => setActiveChallenge(null)
