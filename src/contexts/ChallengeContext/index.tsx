@@ -49,7 +49,7 @@ export const ChallengeProvider: React.FC<{ children: ReactNode }> = ({
 
     if (Notification.permission === 'granted') {
       new Notification('Novo desafio 🎉', {
-        body: `Vlalend ${challenge.amount}xp!`
+        body: `Valend ${challenge.amount}xp!`
       })
     }
   }
