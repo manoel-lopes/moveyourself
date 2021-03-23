@@ -2,7 +2,7 @@ import { createContext, useState, ReactNode, useEffect } from 'react'
 
 import challenges from '../../data/challenges.json'
 
-// import * as notifications from '../../assets/notifications.mp3'
+// import notifications from '../../assets/notifications.mp3'
 
 type Challenge = {
   type: 'body' | 'eye'

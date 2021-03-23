@@ -4,7 +4,7 @@ import { CountdownContext } from '../../../contexts/CountdownContext'
 
 import finishedCycle from '../../../assets/icons/finished-cycle.svg'
 import startCycle from '../../../assets/icons/start-cycle.svg'
-import quitCycle from '../../../assets/icons/quit-cycle.svg'
+import quitCycle from  '../../../assets/icons/quit-cycle.svg'
 
 import { Button, Img, TimeLeft, TimeFinished, TimeLeftBar } from './styles'
 
