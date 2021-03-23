@@ -2,6 +2,8 @@ import { createContext, useState, ReactNode, useEffect } from 'react'
 
 import challenges from '../../data/challenges.json'
 
+// import * as notifications from '../../assets/notifications.mp3'
+
 type Challenge = {
   type: 'body' | 'eye'
   description: string
@@ -43,7 +45,7 @@ export const ChallengeProvider: React.FC<{ children: ReactNode }> = ({
 
     setActiveChallenge(challenge)
 
-    // new Audio(notification).play()
+    // new Audio(notifications).play()
 
     if (Notification.permission === 'granted') {
       new Notification('Novo desafio 🎉', {
