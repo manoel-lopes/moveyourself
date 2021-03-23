@@ -27,11 +27,11 @@ export const Container = styled('div')`
     }
 
     span:first-child {
-      border-right: 2px solid ${({ theme: { colors } }) => colors.background};
+      border-right: 1px solid ${({ theme: { colors } }) => colors.background};
     }
 
     span:last-child {
-      border-left: 2px solid ${({ theme: { colors } }) => colors.background};
+      border-left: 1px solid ${({ theme: { colors } }) => colors.background};
     }
   }
 
