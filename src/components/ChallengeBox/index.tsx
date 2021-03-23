@@ -9,11 +9,16 @@ import { ChallengeActive } from './ChallengeActive'
 import { Container } from './styles'
 
 export const ChallengeBox: React.FC = () => {
-  const { activeChallenge, resetChallenge, completeChallenge } = useContext(ChallengeContext)
+  const { 
+    activeChallenge,
+    resetChallenge,
+    completeChallenge } = useContext(ChallengeContext)
+
   const { resetCountdown } = useContext(CountdownContext)
 
   const handleChallengeSucceeded = () => {
-    
+    completeChallenge()
+    resetCountdown()
   }
 
   const handleChallengeFailed = () => {
@@ -28,8 +33,8 @@ export const ChallengeBox: React.FC = () => {
           amount={activeChallenge.amount}
           description={activeChallenge.description}
           type={activeChallenge.type}
-          resetChallenge={resetChallenge}
-          completeChallenge={completeChallenge}
+          handleChallengeSucceeded={handleChallengeSucceeded}
+          handleChallengeFailed={handleChallengeFailed}
         />
       ) : (
         <ChallengeNotActive />

@@ -7,16 +7,16 @@ type OwnProps = {
   type: 'body' | 'eye'
   description: string
   amount: number
-  resetChallenge: () => void
-  completeChallenge: () => void
+  handleChallengeSucceeded: () => void
+  handleChallengeFailed: () => void
 }
 
 export const ChallengeActive: React.FC<OwnProps> = ({
   amount,
   description,
   type,
-  resetChallenge,
-  completeChallenge
+  handleChallengeSucceeded,
+  handleChallengeFailed,
 }) => {
   return (
     <Container>
@@ -29,11 +29,11 @@ export const ChallengeActive: React.FC<OwnProps> = ({
       </main>
 
       <footer>
-        <SucceededButton onClick={completeChallenge}>
+        <SucceededButton onClick={handleChallengeSucceeded}>
           Completei
         </SucceededButton>
 
-        <FailedButton onClick={resetChallenge}>
+        <FailedButton onClick={handleChallengeFailed}>
           Falhei
         </FailedButton>
       </footer>

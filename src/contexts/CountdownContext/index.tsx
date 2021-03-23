@@ -43,6 +43,7 @@ export const CountdownProvider: React.FC<{ children: ReactNode }> = ({
   const resetCountdown = () => {
     clearTimeout(timeout)
     setIsActive(false)
+    setHasFinished(false)
     setTime(initialTime)
   }
 
