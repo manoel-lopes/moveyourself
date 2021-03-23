@@ -8,7 +8,7 @@ export const ChallengeNotActive: React.FC = () => {
       <strong>Encerre um ciclo para receber um desafio</strong>
       <p>
         <img src={arrowLevelUp} alt="Level Up" />
-        Complete um desafio para elevar seu nível
+        Complete um desafio para subir de level
       </p>
     </Container>
   )

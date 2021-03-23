@@ -14,7 +14,7 @@ export const Profile: React.FC = () => {
         <strong>Manoel Lopes</strong>
         <p>
           <img src={arrowLevel} alt="level" />
-          Nível {level}
+          Level {level}
         </p>
       </div>
     </Container>
