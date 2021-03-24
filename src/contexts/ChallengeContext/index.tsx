@@ -3,7 +3,8 @@ import Cookies from 'js-cookie'
 
 import challenges from '../../data/challenges.json'
 import { LevelUpModal } from '../../components/LevelUpModal'
-// import notifications from '../../assets/notifications.mp3'
+
+import notifications from '../../../public/notification.mp3'
 
 type Challenge = {
   type: 'body' | 'eye'
@@ -63,7 +64,7 @@ export const ChallengeProvider: React.FC<OwnProps> = props => {
 
     setActiveChallenge(challenge)
 
-    // new Audio(notifications).play()
+    new Audio(notifications).play()
 
     if (Notification.permission === 'granted') {
       new Notification('Novo desafio 🎉', {
