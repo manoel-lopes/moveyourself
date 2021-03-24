@@ -1,12 +1,21 @@
 import { createContext, useState, ReactNode, useEffect } from 'react'
+import Cookies from 'js-cookie'
 
 import challenges from '../../data/challenges.json'
+import { type } from 'node:os'
 // import notifications from '../../assets/notifications.mp3'
 
 type Challenge = {
   type: 'body' | 'eye'
   description: string
   amount: number
+}
+
+type OwnProps = {
+  children: ReactNode
+  level: number
+  currentExperience: number
+  challengesCompleted: number
 }
 
 type OwnData = {
@@ -23,18 +32,26 @@ type OwnData = {
 
 export const ChallengeContext = createContext({} as OwnData)
 
-export const ChallengeProvider: React.FC<{ children: ReactNode }> = ({
-  children
-}) => {
-  const [level, setLevel] = useState(1)
-  const [currentExperience, setCurrentExperience] = useState(0)
-  const [challengesCompleted, setChallengeCompleted] = useState(0)
+export const ChallengeProvider: React.FC<OwnProps> = props => {
+  const [level, setLevel] = useState(props.level ?? 1)
+  const [currentExperience, setCurrentExperience] = useState(
+    props.currentExperience ?? 0
+  )
+  const [challengesCompleted, setChallengeCompleted] = useState(
+    props.challengesCompleted ?? 0
+  )
 
   const [activeChallenge, setActiveChallenge] = useState<Challenge>(null)
 
   useEffect(() => {
     Notification.requestPermission()
   }, [])
+
+  useEffect(() => {
+    Cookies.set('level', String(level))
+    Cookies.set('currentExperience', String(currentExperience))
+    Cookies.set('challengesCompleted', String(challengesCompleted))
+  }, [level, currentExperience, challengesCompleted])
 
   const levelUp = () => setLevel(level + 1)
 
@@ -43,7 +60,7 @@ export const ChallengeProvider: React.FC<{ children: ReactNode }> = ({
     const challenge = challenges[randomChallengeIndex] as Challenge
 
     setActiveChallenge(challenge)
-    
+
     // new Audio(notifications).play()
 
     if (Notification.permission === 'granted') {
@@ -91,7 +108,7 @@ export const ChallengeProvider: React.FC<{ children: ReactNode }> = ({
         completeChallenge
       }}
     >
-      {children}
+      {props.children}
     </ChallengeContext.Provider>
   )
 }
