@@ -1,7 +1,6 @@
 import { createContext, useState, ReactNode, useEffect } from 'react'
 
 import challenges from '../../data/challenges.json'
-
 // import notifications from '../../assets/notifications.mp3'
 
 type Challenge = {
@@ -44,7 +43,7 @@ export const ChallengeProvider: React.FC<{ children: ReactNode }> = ({
     const challenge = challenges[randomChallengeIndex] as Challenge
 
     setActiveChallenge(challenge)
-
+    
     // new Audio(notifications).play()
 
     if (Notification.permission === 'granted') {
