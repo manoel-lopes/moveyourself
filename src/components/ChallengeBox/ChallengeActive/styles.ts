@@ -41,7 +41,7 @@ export const Container = styled('div')`
 `
 
 export const SucceededButton = styled('button')`
-  all: unset;
+  outline-color: ${({ theme: { colors } }) => colors.text};
 
   height: 3rem;
   display: flex;

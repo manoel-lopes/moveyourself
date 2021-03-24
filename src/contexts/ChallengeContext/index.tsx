@@ -28,6 +28,7 @@ type OwnData = {
   startNewChallenge: () => void
   resetChallenge: () => void
   completeChallenge: () => void
+  closeLevelModal: () => void
 }
 
 export const ChallengeContext = createContext({} as OwnData)
@@ -42,6 +43,7 @@ export const ChallengeProvider: React.FC<OwnProps> = props => {
   )
 
   const [activeChallenge, setActiveChallenge] = useState<Challenge>(null)
+  const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)
 
   useEffect(() => {
     Notification.requestPermission()
@@ -72,6 +74,8 @@ export const ChallengeProvider: React.FC<OwnProps> = props => {
 
   const resetChallenge = () => setActiveChallenge(null)
 
+  const closeLevelModal = () => setIsLevelUpModalOpen(false)
+
   const completeChallenge = () => {
     if (!activeChallenge) {
       return
@@ -84,6 +88,7 @@ export const ChallengeProvider: React.FC<OwnProps> = props => {
     if (finalExperience >= experienceToTheNextLevel) {
       finalExperience -= experienceToTheNextLevel
       levelUp()
+      setIsLevelUpModalOpen(true)
     }
 
     setCurrentExperience(finalExperience)
@@ -105,11 +110,12 @@ export const ChallengeProvider: React.FC<OwnProps> = props => {
         levelUp,
         startNewChallenge,
         resetChallenge,
-        completeChallenge
+        completeChallenge,
+        closeLevelModal
       }}
     >
       {props.children}
-      <LevelUpModal />
+      {isLevelUpModalOpen && <LevelUpModal />}
     </ChallengeContext.Provider>
   )
 }

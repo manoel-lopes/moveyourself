@@ -8,8 +8,7 @@ type OwnProps = {
 const height = '5px'
 
 export const Button = styled('button')`
-  all: unset;
-
+  outline-color: ${({ theme: { colors } }) => colors.text};
   width: 100%;
   height: 5rem;
 

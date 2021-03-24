@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled('div')`
-  background: #48494b;
+  background: rgba(0, 0, 0, 0.55);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -13,7 +13,7 @@ export const Container = styled('div')`
   align-items: center;
 
   div {
-    background: ${({ theme: { colors } }) => colors.dark};
+    background: ${({ theme: { colors } }) => colors.background};
     width: 100%;
     max-width: 400px;
     padding: 2rem 3rem;
@@ -39,6 +39,11 @@ export const Container = styled('div')`
       top: 0.5rem;
       background: transparent;
       border: 0;
+      font-size: 0px;
+
+      :focus {
+        outline-color: ${({ theme: { colors } }) => colors.text};
+      }
     }
   }
 `
