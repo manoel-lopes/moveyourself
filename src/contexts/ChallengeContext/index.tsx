@@ -2,7 +2,7 @@ import { createContext, useState, ReactNode, useEffect } from 'react'
 import Cookies from 'js-cookie'
 
 import challenges from '../../data/challenges.json'
-import { type } from 'node:os'
+import { LevelUpModal } from '../../components/LevelUpModal'
 // import notifications from '../../assets/notifications.mp3'
 
 type Challenge = {
@@ -65,7 +65,7 @@ export const ChallengeProvider: React.FC<OwnProps> = props => {
 
     if (Notification.permission === 'granted') {
       new Notification('Novo desafio 🎉', {
-        body: `Valend ${challenge.amount}xp!`
+        body: `Valendo ${challenge.amount}xp!`
       })
     }
   }
@@ -109,6 +109,7 @@ export const ChallengeProvider: React.FC<OwnProps> = props => {
       }}
     >
       {props.children}
+      <LevelUpModal />
     </ChallengeContext.Provider>
   )
 }
