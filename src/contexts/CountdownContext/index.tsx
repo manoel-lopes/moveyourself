@@ -27,6 +27,7 @@ export const CountdownProvider: React.FC<{ children: ReactNode }> = ({
 
   const initialTime = 0.1 * 60
   let timeout: NodeJS.Timeout
+  const startPoint = 1.8
 
   const [time, setTime] = useState(initialTime)
   const [isActive, setIsActive] = useState(false)
@@ -38,6 +39,7 @@ export const CountdownProvider: React.FC<{ children: ReactNode }> = ({
 
   const startCountdown = () => {
     setIsActive(true)
+    setTimeLeft(startPoint)
   }
 
   const resetCountdown = () => {
@@ -62,7 +64,6 @@ export const CountdownProvider: React.FC<{ children: ReactNode }> = ({
   useEffect(() => {
     const factor = 100 / initialTime
     let current = timeLeft + factor
-    const startPoint = 1.8
 
     if (time > 0) {
       if (current > startPoint && current <= 100) {
