@@ -18,6 +18,8 @@ type OwnData = {
   resetCountdown: () => void
 }
 
+let timeout: NodeJS.Timeout
+
 export const CountdownContext = createContext({} as OwnData)
 
 export const CountdownProvider: React.FC<{ children: ReactNode }> = ({
@@ -26,7 +28,6 @@ export const CountdownProvider: React.FC<{ children: ReactNode }> = ({
   const { startNewChallenge } = useContext(ChallengeContext)
 
   const initialTime = 0.1 * 60
-  let timeout: NodeJS.Timeout
   const startPoint = 1.8
 
   const [time, setTime] = useState(initialTime)
