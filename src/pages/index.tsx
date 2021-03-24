@@ -10,6 +10,7 @@ import { CountdownProvider } from '../contexts/CountdownContext'
 import { ChallengeProvider } from '../contexts/ChallengeContext'
 
 import { Container } from '../styles/pages/Container'
+import Head from 'next/Head'
 
 type OwnProps = {
   level: number
@@ -25,6 +26,10 @@ const Home = ({ level, currentExperience, challengesCompleted }: OwnProps) => {
       challengesCompleted={challengesCompleted}
     >
       <Container>
+        <Head>
+          <title>Início | move-yourself</title>
+        </Head>
+
         <ExperienceBar />
 
         <CountdownProvider>
