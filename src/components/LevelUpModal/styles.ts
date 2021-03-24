@@ -42,7 +42,7 @@ export const Container = styled('div')`
       font-size: 0px;
 
       :focus {
-        outline-color: ${({ theme: { colors } }) => colors.text};
+        outline: #fff solid 2px;
       }
     }
   }

@@ -1,4 +1,4 @@
-import styled, { DefaultTheme } from 'styled-components'
+import styled from 'styled-components'
 
 export const Container = styled('div')`
   height: 100%;
@@ -62,6 +62,10 @@ export const SucceededButton = styled('button')`
 
   :hover {
     filter: brightness(0.9);
+  }
+
+  :focus {
+    outline: #fff solid 2px;
   }
 `
 

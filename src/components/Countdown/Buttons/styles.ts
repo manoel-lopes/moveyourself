@@ -39,6 +39,10 @@ export const Button = styled('button')`
       !isActive ? colors.blueDark : colors.red};
   }
 
+  :focus {
+    outline: #fff solid 2px;
+  }
+
   :disabled {
     background: ${({ theme: { colors } }) => colors.dark};
     color: ${({ theme: { colors } }) => colors.text};
