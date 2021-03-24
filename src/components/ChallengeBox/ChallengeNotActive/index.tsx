@@ -1,4 +1,4 @@
-import arrowLevelUp from '../../../assets/icons/arrow-level-up.svg'
+import arrowLevelUp from '../../../public/icons/arrow-level-up.svg'
 
 import { Container } from './styles'
 

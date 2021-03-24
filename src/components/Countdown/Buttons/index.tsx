@@ -2,9 +2,9 @@ import { useContext } from 'react'
 
 import { CountdownContext } from '../../../contexts/CountdownContext'
 
-import finishedCycle from '../../../assets/icons/finished-cycle.svg'
-import startCycle from '../../../assets/icons/start-cycle.svg'
-import quitCycle from  '../../../assets/icons/quit-cycle.svg'
+import finishedCycle from '../../../public/icons/finished-cycle.svg'
+import startCycle from '../../../public/icons/start-cycle.svg'
+import quitCycle from  '../../../public/icons/quit-cycle.svg'
 
 import { Button, Img, TimeLeft, TimeFinished, TimeLeftBar } from './styles'
 

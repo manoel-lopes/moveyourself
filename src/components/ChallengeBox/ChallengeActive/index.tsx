@@ -1,5 +1,5 @@
-import body from '../../../assets/icons/body.svg'
-import eye from '../../../assets/icons/eye.svg'
+import body from '../../../public/icons/body.svg'
+import eye from '../../../public/icons/eye.svg'
 
 import { Container, SucceededButton, FailedButton } from './styles'
 

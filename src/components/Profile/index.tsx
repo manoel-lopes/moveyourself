@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 
-import arrowLevel from '../../assets/icons/arrow-level.svg'
+import arrowLevel from '../../public/icons/arrow-level.svg'
 import { ChallengeContext } from '../../contexts/ChallengeContext'
 import { Container } from './styles'
 

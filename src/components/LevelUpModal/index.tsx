@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 
-import close from '../../assets/icons/close.svg'
-import levelup from '../../assets/icons/levelup.svg'
+import close from '../../public/icons/close.svg'
+import levelup from '../../public/icons/levelup.svg'
 
 import { ChallengeContext } from '../../contexts/ChallengeContext'
 import { Container, Header } from './styles'
