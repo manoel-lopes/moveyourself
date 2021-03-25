@@ -1,5 +1,3 @@
-import arrowLevelUp from '../../../public/icons/arrow-level-up.svg'
-
 import { Container } from './styles'
 
 export const ChallengeNotActive: React.FC = () => {
@@ -7,7 +5,7 @@ export const ChallengeNotActive: React.FC = () => {
     <Container>
       <strong>Encerre um ciclo para receber um desafio</strong>
       <p>
-        <img src={arrowLevelUp} alt="Level Up" />
+        <img src="/icons/level-up.svg" alt="Level Up" />
         Complete um desafio para subir de level
       </p>
     </Container>

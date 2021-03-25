@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 
-import arrowLevel from '../../public/icons/arrow-level.svg'
 import { ChallengeContext } from '../../contexts/ChallengeContext'
 import { Container } from './styles'
 
@@ -13,7 +12,7 @@ export const Profile: React.FC = () => {
       <div>
         <strong>Manoel Lopes</strong>
         <p>
-          <img src={arrowLevel} alt="level" />
+          <img src="/icons/level.svg" alt="level" />
           Level {level}
         </p>
       </div>

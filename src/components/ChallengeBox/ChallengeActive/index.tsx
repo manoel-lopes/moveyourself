@@ -16,14 +16,14 @@ export const ChallengeActive: React.FC<OwnProps> = ({
   description,
   type,
   handleChallengeSucceeded,
-  handleChallengeFailed,
+  handleChallengeFailed
 }) => {
   return (
     <Container>
       <header>Ganhe {amount} px</header>
 
       <main>
-        <img src={type === 'body' ? body : eye} />
+        <img src={`/icons/${type}.svg`} />
         <strong>Novo desafio</strong>
         <p>{description}</p>
       </main>
@@ -33,9 +33,7 @@ export const ChallengeActive: React.FC<OwnProps> = ({
           Completei
         </SucceededButton>
 
-        <FailedButton onClick={handleChallengeFailed}>
-          Falhei
-        </FailedButton>
+        <FailedButton onClick={handleChallengeFailed}>Falhei</FailedButton>
       </footer>
     </Container>
   )

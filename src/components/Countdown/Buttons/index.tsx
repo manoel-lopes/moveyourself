@@ -2,10 +2,6 @@ import { useContext } from 'react'
 
 import { CountdownContext } from '../../../contexts/CountdownContext'
 
-import finishedCycle from '../../../public/icons/finished-cycle.svg'
-import startCycle from '../../../public/icons/start-cycle.svg'
-import quitCycle from  '../../../public/icons/quit-cycle.svg'
-
 import { Button, Img, TimeLeft, TimeFinished, TimeLeftBar } from './styles'
 
 export const StarCycleButton: React.FC = () => {
@@ -14,7 +10,7 @@ export const StarCycleButton: React.FC = () => {
   return (
     <Button onClick={startCountdown}>
       Iniciar ciclo
-      <Img src={startCycle} alt="Start cycle" />
+      <Img src="/icons/start-cycle.svg" alt="Start cycle" />
     </Button>
   )
 }
@@ -25,7 +21,7 @@ export const QuitCycleButton: React.FC = () => {
   return (
     <Button isActive onClick={resetCountdown}>
       Abandonar ciclo
-      <Img src={quitCycle} alt="Quit cycle" />
+      <Img src="/icons/quit-cycle.svg" alt="Quit cycle" />
       <TimeLeftBar>
         <TimeLeft style={{ width: `${timeLeft}%` }} />
       </TimeLeftBar>
@@ -36,7 +32,7 @@ export const QuitCycleButton: React.FC = () => {
 export const FinishedCycleButton: React.FC = () => (
   <Button disabled>
     Ciclo encerrado
-    <Img src={finishedCycle} alt="Finished cycle" />
+    <Img src="/icons/finished-cycle.svg" alt="Finished cycle" />
     <TimeFinished />
   </Button>
 )

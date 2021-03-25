@@ -1,8 +1,5 @@
 import { useContext } from 'react'
 
-import close from '../../public/icons/close.svg'
-import levelup from '../../public/icons/levelup.svg'
-
 import { ChallengeContext } from '../../contexts/ChallengeContext'
 import { Container, Header } from './styles'
 
@@ -12,12 +9,12 @@ export const LevelUpModal: React.FC = () => {
   return (
     <Container>
       <div>
-        <Header url={levelup}>{level}</Header>
+        <Header url="/icons/close.svg">{level}</Header>
         <strong>Parabéns</strong>
         <p>Você alcançou um level novo!</p>
 
         <button type="button" onClick={closeLevelModal}>
-          <img src={close} alt="Fechar Modal" />
+          <img src="/icons/close.svg" alt="Fechar Modal" />
         </button>
       </div>
     </Container>
