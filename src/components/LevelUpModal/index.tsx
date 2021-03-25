@@ -9,7 +9,7 @@ export const LevelUpModal: React.FC = () => {
   return (
     <Container>
       <div>
-        <Header url="/icons/close.svg">{level}</Header>
+        <Header url="/icons/levelup.svg">{level}</Header>
         <strong>Parabéns</strong>
         <p>Você alcançou um level novo!</p>
 
