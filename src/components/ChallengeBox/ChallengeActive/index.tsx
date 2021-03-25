@@ -1,6 +1,3 @@
-import body from '../../../public/icons/body.svg'
-import eye from '../../../public/icons/eye.svg'
-
 import { Container, SucceededButton, FailedButton } from './styles'
 
 type OwnProps = {
