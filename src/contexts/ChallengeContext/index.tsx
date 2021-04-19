@@ -4,6 +4,8 @@ import Cookies from 'js-cookie'
 import challenges from '../../data/challenges.json'
 import { LevelUpModal } from '../../components/LevelUpModal'
 
+// import notifications from '/notification.mp3'
+
 type Challenge = {
   type: 'body' | 'eye'
   description: string
