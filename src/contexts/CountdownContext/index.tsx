@@ -27,7 +27,7 @@ export const CountdownProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const { startNewChallenge } = useContext(ChallengeContext)
 
-  const initialTime = 0.1 * 60
+  const initialTime = 0.1 * 300
   const startPoint = 1.8
 
   const [time, setTime] = useState(initialTime)
