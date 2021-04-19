@@ -27,7 +27,7 @@ const Home = ({ level, currentExperience, challengesCompleted }: OwnProps) => {
     >
       <Container>
         <Head>
-          <title>Início | move-yourself</title>
+          <title>Início | moveyourself</title>
         </Head>
 
         <ExperienceBar />
